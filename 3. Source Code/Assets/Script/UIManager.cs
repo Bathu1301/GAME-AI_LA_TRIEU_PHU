@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public Text questionText;
     public Dialog dialog;
     public Dialog setting;
+    public DialogBarChart dialogBarChart;
     public AnswerButton[] answerButtons;
     public SuportButton[] spButton;
     public Sprite rightAnswer;
