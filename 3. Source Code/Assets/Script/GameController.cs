@@ -80,6 +80,7 @@ public class GameController : MonoBehaviour
                         {
                             int a = i;
                             temp1[0].btnComp.onClick.AddListener(() => fiftyfifty(a));
+                            temp1[1].btnComp.onClick.AddListener(() => help());
                         }
                     }
                            
@@ -208,5 +209,12 @@ public class GameController : MonoBehaviour
         temp[a].btnComp.interactable = false;
         temp1[0].btnComp.interactable = false;
 
+    }
+
+    public void help()
+    {
+        UIManager.Ins.dialogBarChart.Show(true);
+        var temp1 = UIManager.Ins.spButton;
+        temp1[1].btnComp.interactable = false;
     }
 }
