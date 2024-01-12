@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour
                     temp[answerId].btnComp.onClick.AddListener(() => CheckRightAnswerEvent(temp[answerId]));
 
                 }
+                temp1[2].btnComp.onClick.AddListener(() => ask());
             }
         }
     }
@@ -216,5 +217,12 @@ public class GameController : MonoBehaviour
         UIManager.Ins.dialogBarChart.Show(true);
         var temp1 = UIManager.Ins.spButton;
         temp1[1].btnComp.interactable = false;
+    }
+
+    public void ask()
+    {
+        UIManager.Ins.askdialog.Show(true);
+        var temp1 = UIManager.Ins.spButton;
+        temp1[2].btnComp.interactable = false;
     }
 }
