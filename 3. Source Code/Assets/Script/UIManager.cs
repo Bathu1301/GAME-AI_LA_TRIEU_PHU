@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public Text questionText;
     public Dialog dialog;
     public Dialog setting;
+    public AskDialog askdialog;
     public DialogBarChart dialogBarChart;
     public AnswerButton[] answerButtons;
     public SuportButton[] spButton;
@@ -76,6 +77,10 @@ public class UIManager : MonoBehaviour
         //spButton.GetComponent<Image>().sprite = use50;
     }
     public void ChangeYK(SuportButton spButton)
+    {
+        //spButton.GetComponent<Image>().sprite = useYK;
+    }
+    public void Ask(SuportButton spButton)
     {
         //spButton.GetComponent<Image>().sprite = useYK;
     }
