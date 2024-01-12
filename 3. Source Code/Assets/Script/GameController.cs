@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
 
         if (qs != null)
         {
+            
             UIManager.Ins.SetQuestionText(qs.question);
             string[] wrongAnswer = new string[] { qs.answerA, qs.answerB, qs.answerC };
 
@@ -52,9 +53,9 @@ public class GameController : MonoBehaviour
 
             var temp = UIManager.Ins.answerButtons;
             var temp1 = UIManager.Ins.spButton;
-            
 
-
+            temp1[0].btnComp.onClick.RemoveAllListeners();
+            temp1[1].btnComp.onClick.RemoveAllListeners();
             if (temp != null && temp.Length > 0)
             {
                 int wrongAnswerCount = 0;
