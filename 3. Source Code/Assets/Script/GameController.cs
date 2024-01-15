@@ -38,13 +38,23 @@ public class GameController : MonoBehaviour
 
     public void CreateQuestion()
     {
-                
+        // Kiểm tra số câu hỏi
+        if (m_rightCount >= 15)
+        {
+            // Hiển thị thông báo chiến thắng
+            UIManager.Ins.dialog.SetDialogContent(" YOU WIN !");
+            UIManager.Ins.dialog.Show(true);
+            StopAllCoroutines();
+            AudioController.Ins.PlayWinSound();
+            return; // Dừng hàm CreateQuestion
+        }
         QuestionData qs = QuestionManager.Ins.GetRandomQuestion();
         count++ ;
         QuestionController.instance.getQuestionNumber(count);
 
         if (qs != null)
         {
+            
             UIManager.Ins.SetQuestionText(qs.question);
             string[] wrongAnswer = new string[] { qs.answerA, qs.answerB, qs.answerC };
 
@@ -52,9 +62,9 @@ public class GameController : MonoBehaviour
 
             var temp = UIManager.Ins.answerButtons;
             var temp1 = UIManager.Ins.spButton;
-            
 
-
+            temp1[0].btnComp.onClick.RemoveAllListeners();
+            temp1[1].btnComp.onClick.RemoveAllListeners();
             if (temp != null && temp.Length > 0)
             {
                 int wrongAnswerCount = 0;
