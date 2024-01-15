@@ -743,6 +743,7 @@ MonoBehaviour:
   questionText: {fileID: 0}
   dialog: {fileID: 0}
   setting: {fileID: 1943736237}
+  dialogBarChart: {fileID: 0}
   answerButtons: []
   spButton: []
   rightAnswer: {fileID: 2176508685651163143, guid: f4cb608ca084ad142aa0352dbc7bb48a, type: 3}
@@ -759,7 +760,7 @@ Transform:
   m_GameObject: {fileID: 507527837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.773922, y: -6.0281596, z: 5019.403}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3280,7 +3281,7 @@ Transform:
   m_GameObject: {fileID: 2038118941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.773922, y: -6.0281596, z: 5019.403}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
