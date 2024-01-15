@@ -38,7 +38,16 @@ public class GameController : MonoBehaviour
 
     public void CreateQuestion()
     {
-                
+        // Kiểm tra số câu hỏi
+        if (m_rightCount >= 15)
+        {
+            // Hiển thị thông báo chiến thắng
+            UIManager.Ins.dialog.SetDialogContent(" YOU WIN !");
+            UIManager.Ins.dialog.Show(true);
+            StopAllCoroutines();
+            AudioController.Ins.PlayWinSound();
+            return; // Dừng hàm CreateQuestion
+        }
         QuestionData qs = QuestionManager.Ins.GetRandomQuestion();
         count++ ;
         QuestionController.instance.getQuestionNumber(count);
