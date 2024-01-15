@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
 
         if (qs != null)
         {
+            
             UIManager.Ins.SetQuestionText(qs.question);
             string[] wrongAnswer = new string[] { qs.answerA, qs.answerB, qs.answerC };
 
@@ -61,9 +62,9 @@ public class GameController : MonoBehaviour
 
             var temp = UIManager.Ins.answerButtons;
             var temp1 = UIManager.Ins.spButton;
-            
 
-
+            temp1[0].btnComp.onClick.RemoveAllListeners();
+            temp1[1].btnComp.onClick.RemoveAllListeners();
             if (temp != null && temp.Length > 0)
             {
                 int wrongAnswerCount = 0;
@@ -98,6 +99,7 @@ public class GameController : MonoBehaviour
                     temp[answerId].btnComp.onClick.AddListener(() => CheckRightAnswerEvent(temp[answerId]));
 
                 }
+                temp1[2].btnComp.onClick.AddListener(() => ask());
             }
         }
     }
@@ -225,5 +227,12 @@ public class GameController : MonoBehaviour
         UIManager.Ins.dialogBarChart.Show(true);
         var temp1 = UIManager.Ins.spButton;
         temp1[1].btnComp.interactable = false;
+    }
+
+    public void ask()
+    {
+        UIManager.Ins.askdialog.Show(true);
+        var temp1 = UIManager.Ins.spButton;
+        temp1[2].btnComp.interactable = false;
     }
 }
